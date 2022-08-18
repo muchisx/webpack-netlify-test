@@ -23,6 +23,7 @@ module.exports = {
             '@utils': path.resolve(__dirname, './src/utils/'),
         }
     },
+    watch: true,
     module: {
         rules: [
             {
@@ -60,5 +61,11 @@ module.exports = {
           }),
           new DotEnv(),
     ],
+    devServer: {
+        static: path.join(__dirname, 'dist'),
+        compress: true,
+        historyApiFallback: true,
+        port: 5500,
+    }
 }
     
